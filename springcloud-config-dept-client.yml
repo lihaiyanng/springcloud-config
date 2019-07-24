@@ -43,7 +43,7 @@ spring:
 
 logging:
   level:
-     com.yunshen.springcloudprovide.mapper: debug
+     com.yunshen.springcloudconfigprovideclient.mapper: debug
 
 pagehelper:
     helperDialect: mysql
@@ -100,7 +100,7 @@ spring:
 
 logging:
   level:
-     com.yunshen.springcloudprovide.mapper: debug
+     com.yunshen.springcloudconfigprovideclient.mapper: debug
 
 pagehelper:
     helperDialect: mysql
