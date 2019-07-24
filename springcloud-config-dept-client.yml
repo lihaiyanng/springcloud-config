@@ -1,0 +1,118 @@
+﻿spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8000
+spring:
+  profiles: dev
+  application:
+    name: springcloud-config-dept-client
+  redis:
+    host: 106.14.97.144
+    port: 6379
+    password: wuliudabao
+    database: 1
+  datasource:
+     username: root
+     password: Yunshen918@1111
+     url: jdbc:mysql://101.132.101.163:3306/waimaidb
+     driver-class-name: com.mysql.jdbc.Driver
+     type: com.alibaba.druid.pool.DruidDataSource
+     initialSize: 5
+     minIdle: 5
+     maxActive: 20
+     maxWait: 60000
+     timeBetweenEvictionRunsMillis: 60000
+     minEvictableIdleTimeMillis: 300000
+     validationQuery: SELECT 1 FROM DUAL
+     testWhileIdle: true
+     testOnBorrow: false
+     testOnReturn: false
+     poolPreparedStatements: true
+
+     filters: stat,wall,log4j
+     maxPoolPreparedStatementPerConnectionSize: 20
+     useGlobalDataSourceStat: true
+     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+  devtools:
+    remote:
+      restart:
+        enabled: true
+
+logging:
+  level:
+     com.yunshen.springcloudprovide.mapper: debug
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+
+eureka:
+  instance:
+    prefer-ip-address: true #注册服务式使用服务的IP地址
+    instance-id: springcloud_provide-ticket #自定义服务器名称
+
+  client:
+    service-url:
+       defaultZone: http://eureka-server:8763/eureka/
+---       
+server:
+  port: 8000
+spring:
+  profiles: test
+  application:
+    name: springcloud-config-dept-client
+  redis:
+    host: 106.14.97.144
+    port: 6379
+    password: wuliudabao
+    database: 1
+  datasource:
+     username: root
+     password: Yunshen918@1111
+     url: jdbc:mysql://101.132.101.163:3306/waimaidb
+     driver-class-name: com.mysql.jdbc.Driver
+     type: com.alibaba.druid.pool.DruidDataSource
+     initialSize: 5
+     minIdle: 5
+     maxActive: 20
+     maxWait: 60000
+     timeBetweenEvictionRunsMillis: 60000
+     minEvictableIdleTimeMillis: 300000
+     validationQuery: SELECT 1 FROM DUAL
+     testWhileIdle: true
+     testOnBorrow: false
+     testOnReturn: false
+     poolPreparedStatements: true
+
+     filters: stat,wall,log4j
+     maxPoolPreparedStatementPerConnectionSize: 20
+     useGlobalDataSourceStat: true
+     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+  devtools:
+    remote:
+      restart:
+        enabled: true
+
+logging:
+  level:
+     com.yunshen.springcloudprovide.mapper: debug
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+
+eureka:
+  instance:
+    prefer-ip-address: true #注册服务式使用服务的IP地址
+    instance-id: springcloud_provide-ticket #自定义服务器名称
+
+  client:
+    service-url:
+       defaultZone: http://eureka-server:8763/eureka/

@@ -1,0 +1,34 @@
+﻿spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8763
+spring:
+  profiles: dev
+  application:
+    name: springcloud-config-eureka-client
+eureka:
+  instance:
+    hostname: eureka-server # eureka实例的主机名
+  client:
+    register-with-eureka: false  #不把eureka本身注册在它本身
+    fetch-registry: false    #false 本身就是注册中心，职责维护服务实例，不需要检索实例
+    service-url:
+       defaultZone: http://eureka-server:8763/eureka/
+---
+server:
+  port: 8763
+spring:
+  profiles: test
+  application:
+    name: springcloud-config-eureka-client
+eureka:
+  instance:
+    hostname: eureka-server # eureka实例的主机名
+  client:
+    register-with-eureka: false  #不把eureka本身注册在它本身
+    fetch-registry: false    #false 本身就是注册中心，职责维护服务实例，不需要检索实例
+    service-url:
+       defaultZone: http://eureka-server:8763/eureka/
