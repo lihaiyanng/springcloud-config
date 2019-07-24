@@ -74,7 +74,7 @@ spring:
   datasource:
      username: root
      password: Yunshen918@1111
-     url: jdbc:mysql://101.132.101.163:3306/waimaidb
+     url: jdbc:mysql://101.132.101.163:3306/waimaidb01
      driver-class-name: com.mysql.jdbc.Driver
      type: com.alibaba.druid.pool.DruidDataSource
      initialSize: 5
